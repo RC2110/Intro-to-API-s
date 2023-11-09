@@ -7,10 +7,13 @@ def send_email(message):
     port = 465
     content = ssl.create_default_context()
     user_email = "rajaachandramohan@gmail.com"
-    pass1 = os.getenv("password")
+    pass1 = os.getenv("aivideo")
     receiver = "rajaachandramohan@gmail.com"
     with smtplib.SMTP_SSL(host, port, context=content) as server:
         server.login(user_email, pass1)
         server.sendmail(user_email, receiver, message)
+
+if __name__ == "__main__":
+    send_email("Hello!")
 
 
